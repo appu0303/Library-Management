@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/Librarydb
+    username: postgres
+    password: 1111
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+    enabled: true
+    clear-checksums: true
+logging:
+  level:
+    liquibase: DEBUG
