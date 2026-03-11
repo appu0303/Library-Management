@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.23.xsd">
+
+    <!-- Insert initial roles -->
+    <changeSet id="3.1" author="dev">
+        <insert tableName="roles">
+            <column name="name" value="ADMIN"/>
+
+        </insert>
+        <insert tableName="roles">
+            <column name="name" value="USER"/>
+
+        </insert>
+        <insert tableName="roles">
+            <column name="name" value="MANAGER"/>
+
+        </insert>
+    </changeSet>
+
+    <!-- Optional: insert sample users -->
+    <changeSet id="3.2" author="dev">
+        <insert tableName="users">
+            <column name="username" value="john"/>
+            <column name="password" value="$2a$10$hashedpassword"/> <!-- bcrypt hashed -->
+            <column name="email" value="john@example.com"/>
+
+        </insert>
+        <insert tableName="users">
+            <column name="username" value="alice"/>
+            <column name="password" value="$2a$10$hashedpassword"/>
+            <column name="email" value="alice@example.com"/>
+
+        </insert>
+    </changeSet>
+
+    <!-- Optional: map users to roles -->
+    <changeSet id="3.3" author="dev">
+        <insert tableName="user_roles">
+            <column name="user_id" value="1"/> <!-- john -->
+            <column name="role_id" value="1"/> <!-- ADMIN -->
+        </insert>
+        <insert tableName="user_roles">
+            <column name="user_id" value="2"/> <!-- alice -->
+            <column name="role_id" value="2"/> <!-- USER -->
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
