@@ -5,10 +5,10 @@ spring:
     password: 1111
   jpa:
     hibernate:
-      ddl-auto: validate
+      ddl-auto: update
   liquibase:
     change-log: classpath:db/changelog/db.changelog-master.xml
-    enabled: true
+    enabled: false
     clear-checksums: true
 logging:
   level:

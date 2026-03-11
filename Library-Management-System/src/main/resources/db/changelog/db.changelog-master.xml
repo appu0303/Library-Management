@@ -8,6 +8,8 @@
 
     <!-- Include Book table changelog -->
     <include file="db/changelog/changelog-1.0-create-books-table.xml"/>
+    <include file="db/changelog/changelog-2.0-create-user-role-userrole-table.xml"/>
+    <include file="db/changelog/changelog-3.0-initial-data.xml"/>
 
     <!-- Include User table changelog (if exists) -->
     <!-- <include file="db/changelog/changes/changelog-1.1-create-users-table.xml"/> -->
